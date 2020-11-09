@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tbin</title>
+    <style>
+        .paste {
+            position: relative;
+            text-align: center;
+        }
+        .p_titletext{
+            position: relative;
+            text-align: center;
+            color: darkorange;
+            font-size: 40px;
+        }
+        .p_pastetext{
+            position: relative;
+            text-align: center;
+            color: yellowgreen;
+            font-size: 25px;
+            margin-top: -20px;
+            top: -15px;
+        }
+        .p_authortext {
+            position: relative;
+            text-align: center;
+            color: yellowgreen;
+            font-size: 25px;
+            top: 25px;
+        }
+        .submit_btn {
+            position: relative;
+            top: 60px;
+            right: 165px;
+            width: 60px;
+            color: firebrick;
+            border: none;
+            font-family: "Times New Roman", serif;
+            font-size: large;
+        }
+        .pastetext {
+            border: 6px gold outset;
+            position: relative;
+            left: 30px;
+            bottom: -15px;
+        }
+        .authortext {
+            position: absolute;
+            top: -15px;
+            left: 46.25vw;
+        }
+        body {
+            background-image: url("bg.JPG");
+            background-size: 100vw 100vh;
+            background-repeat: no-repeat;
+            background-origin: content-box;
+        }
+    </style>
+</head>
+<body>
+    <p class="p_titletext">tbin</p>
+    <p class="p_pastetext">type your author name here</p>
+    <div>
+    <form action="/submit_paste" method="post" class="paste">
+        <input class="authortext" type="text" name="author">
+        <p class="p_authortext">type your paste here</p>
+        <textarea class="pastetext" name="paste" rows="20" cols="40"></textarea>
+    <input class="submit_btn" type="submit" value="send">
+    </form>
+    </div>
+</body>
+</html>
