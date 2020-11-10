@@ -1,17 +1,24 @@
 package main
 
 import (
+	"crypto/rand"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"math/big"
 	"net/http"
+	"os"
 )
+
+
 
 //Constants
 const (
 	LISTEN_ADDR_INIT   = "/init"
 	LISTEN_ADDR_SUBMIT = "/submit_paste"
 )
+
+var npastes []pastefmt
 
 func main() {
 	//httphandle("/rand")
@@ -20,6 +27,7 @@ func main() {
 	if err != nil {
 		fmt.Println(err.Error())
 	}
+	pasteinit() //init paste file db system
 }
 
 func httpinit() *http.ServeMux {
@@ -47,8 +55,24 @@ func submitpastehandler(w http.ResponseWriter, req *http.Request) { //POST
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(req.PostForm.Get("paste")) //type name not label
-	pasteread(0)
+	pastewrite_id_impl(pastefmt{
+		req.PostForm.Get("text"),
+		req.PostForm.Get("author"),
+		"",
+	})
+}
+
+func linkgen() string {
+	for i := 0; i < 16; i++ {
+		num, _ := rand.Int(rand.Reader, big.NewInt(16))
+		num2, _ :=
+	}
+}
+
+func errhandle(e error, errordesc string) {
+	if e != nil {
+		_ = fmt.Errorf("errorin: %s, error!: %s", errordesc, e.Error())
+	}
 }
 
 type pastefmt struct { //no id cause count of array is the ID
@@ -57,31 +81,64 @@ type pastefmt struct { //no id cause count of array is the ID
 	Link   string `json:"link"`
 }
 
-func pasteread(id int) {
+func pasteinit(){
 	bytecontent, err := ioutil.ReadFile("pastes.json")
 	if err != nil {
 		fmt.Println(err)
 	}
-	var pastes []pastefmt
-	err2 := json.Unmarshal(bytecontent, &pastes)
+	err2 := json.Unmarshal(bytecontent, &npastes)//load content into &npastes
 	if err2 != nil {
 		fmt.Println(err2)
 	}
-	fmt.Println(pastes[id].Author)
 }
 
-func pastewrite(id int, paste pastefmt) {
-	bytecontent, err := ioutil.ReadFile("pastes.json")
-	if err != nil {
-		fmt.Println(err)
+//TODO backup function for writing pastes from memory to file
+
+/*func pasteswrite(){
+	bc, err := json.Marshal(&npastes)
+
+	f, err3 := os.Open("pastes.json")
+
+	if err3 != nil {
+		fmt.Println(err3)
 	}
 
-	npaste, err2 := json.Marshal(paste)
+	defer f.Close()
+
+	bc = append(bc, byte('\n'))
+
+	fi, _ := f.Stat()
+	_, err4 := f.WriteAt(bc, fi.Size()-2)
+}*/
+
+func pasteread(id int) pastefmt{//no need for this cause we save to npastes []pastefmt
+	return npastes[id]
+}
+
+func pastewrite(id int, paste pastefmt) {//this just appends the paste to the file
+	bc, err2 := json.Marshal(paste)
 	if err2 != nil {
 		fmt.Println(err2)
 	}
 
-	bytecontent = append(bytecontent, npaste...) //unpacking slice
+	f, err3 := os.Open("pastes.json")
 
-	//TODO pastewrite() method,
+	if err3 != nil {
+		fmt.Println(err3)
+	}
+
+	defer f.Close()
+
+	fi, _ := f.Stat()
+	_, err4 := f.WriteAt(bc, fi.Size()-2)
+
+	if err4 != nil {
+		fmt.Println(err4)
+	}
+
+	npastes = append(npastes, paste)//to include (match!) in backup
+}
+
+func pastewrite_id_impl(paste pastefmt){
+	pastewrite(len(npastes)+1, paste)//should work idk
 }
