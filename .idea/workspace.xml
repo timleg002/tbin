@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cd1e8af-f7b3-428e-ac60-48f85bf56f92" name="Default Changelist" comment="so i wont save work lmao">
+    <list default="true" id="5cd1e8af-f7b3-428e-ac60-48f85bf56f92" name="Default Changelist" comment="untested!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pastes.json" beforeDir="false" afterPath="$PROJECT_DIR$/pastes.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tbin.go" beforeDir="false" afterPath="$PROJECT_DIR$/tbin.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,11 +90,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="some json decoding" />
     <MESSAGE value="so i wont save work lmao" />
-    <option name="LAST_COMMIT_MESSAGE" value="so i wont save work lmao" />
+    <MESSAGE value="untested!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="untested!!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="872" y="341" key="#Plugins" timestamp="1604963725974">
@@ -120,30 +123,30 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1147" y="405" width="702" height="590" key="Github.UntrackedFilesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1604962916864" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1605006484200">
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1605010871073">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1605006484200" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1605006484200">
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1605010871073" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1605010871072">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1605006484200" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1605006484200">
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1605010871072" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1605010871072">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1605006484200" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1605006484200">
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1605010871072" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1605010871073">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1605006484200" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1604966464759">
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1605010871073" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1605010045313">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1604966464759" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1604963675717">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605010045313" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1605010216120">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1604963675717" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1605010216120" />
     <state x="1002" y="612" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604962826799">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

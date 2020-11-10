@@ -54,7 +54,7 @@ func submitpastehandler(w http.ResponseWriter, req *http.Request) { //POST
 		fmt.Println(err)
 	}
 	pastewrite_id_impl(pastefmt{
-		req.PostForm.Get("text"),
+		req.PostForm.Get("paste"), //paste in html, text in json and code... fucked up but 😈🚫🤫🤘
 		req.PostForm.Get("author"),
 		linkgen(),
 	})
@@ -127,7 +127,7 @@ func pastewrite(id int, paste pastefmt) { //this just appends the paste to the f
 		fmt.Println(err2)
 	}
 
-	f, err3 := os.Open("pastes.json")
+	f, err3 := os.OpenFile("pastes.json", os.O_WRONLY, os.ModePerm)
 
 	if err3 != nil {
 		fmt.Println(err3)
@@ -136,10 +136,20 @@ func pastewrite(id int, paste pastefmt) { //this just appends the paste to the f
 	defer f.Close()
 
 	fi, _ := f.Stat()
-	_, err4 := f.WriteAt(bc, fi.Size()-2)
+	_, err6 := f.WriteAt([]byte{'}', ','}, fi.Size()-3) //it overwrites the '}' character so we need to put it back hehe😹
+	_, err4 := f.WriteAt(bc, fi.Size()-1)
+	_, err5 := f.WriteAt([]byte{'\n', ']'}, fi.Size()-1+int64(len(bc))) //ends the json
 
 	if err4 != nil {
 		fmt.Println(err4)
+	}
+
+	if err5 != nil {
+		fmt.Println(err5)
+	}
+
+	if err6 != nil {
+		fmt.Println(err6)
 	}
 
 	npastes = append(npastes, paste) //to include (match!) in backup
