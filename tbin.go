@@ -8,39 +8,55 @@ import (
 	"math/big"
 	"net/http"
 	"os"
+	"strings"
 )
 
 //Constants
 const (
-	LISTEN_ADDR_INIT   = "/init"
-	LISTEN_ADDR_SUBMIT = "/submit_paste"
+	LISTEN_ADDR_INIT          = "/init"
+	LISTEN_ADDR_SUBMIT        = "/submit_paste"
+	LISTEN_ADDR_LINK_WILDCARD = "/paste/"
+	URI_LINK                  = "/paste/" //URI LINK IS RELATIVE TO WEBPAGE, NOT RELATIVE TO THE INTRANET/INTERNET
 )
 
 var npastes []pastefmt
 
 func main() {
 	//httphandle("/rand")
+	pasteinit() //init paste file db system
 	mux := httpinit()
 	err := http.ListenAndServe("", mux) //mux is a handler
 	if err != nil {
 		fmt.Println(err.Error())
 	}
-	pasteinit() //init paste file db system
 }
 
 func httpinit() *http.ServeMux {
 	mux := http.NewServeMux()
 	mux.HandleFunc(LISTEN_ADDR_INIT, siteindexhandler)
 	mux.HandleFunc(LISTEN_ADDR_SUBMIT, submitpastehandler)
+	mux.HandleFunc(LISTEN_ADDR_LINK_WILDCARD, pasteshowhandler)
 	return mux
 }
 
-func httphandle(url string) {
-	http.HandleFunc(url, nil) //for now
+func pasteshowhandler(w http.ResponseWriter, req *http.Request) {
+	str := strings.TrimPrefix(req.URL.RequestURI(), URI_LINK)
+	fmt.Println(str)
+	paste := returnpastefmtwithlinkname(str)
+	if paste == nil {
+		_, _ = fmt.Fprintf(w, "Paste doesn't exist!")
+	} else {
+		_, _ = fmt.Fprintf(w, "paste: %s\nauthor: %s\n", paste.Text, paste.Author)
+	}
 }
 
-func httplisten() {
-
+func returnpastefmtwithlinkname(link string) *pastefmt {
+	for i := range npastes {
+		if npastes[i].Link == link {
+			return &npastes[i]
+		}
+	}
+	return nil
 }
 
 func siteindexhandler(w http.ResponseWriter, req *http.Request) {
@@ -53,11 +69,16 @@ func submitpastehandler(w http.ResponseWriter, req *http.Request) { //POST
 	if err != nil {
 		fmt.Println(err)
 	}
+	linkstr := linkgen()
 	pastewrite_id_impl(pastefmt{
 		req.PostForm.Get("paste"), //paste in html, text in json and code... fucked up but 😈🚫🤫🤘
 		req.PostForm.Get("author"),
-		linkgen(),
+		linkstr,
 	})
+	_, _ = fmt.Fprintf(w, `<html>
+<head></head><body></body>
+`+"Your paste is available at "+`<a href="`+"%s"+`">here</a>`, URI_LINK+linkstr)
+	//_, _ = w.Write([]byte("Your paste is available at " + `<a href="` + URI_LINK+linkstr + `">here</a>`))
 }
 
 func linkgen() string { //maybe some checking if the value already eixsts?🤔
@@ -98,24 +119,7 @@ func pasteinit() {
 	}
 }
 
-//TODO backup function for writing pastes from memory to file
-
-/*func pasteswrite(){
-	bc, err := json.Marshal(&npastes)
-
-	f, err3 := os.Open("pastes.json")
-
-	if err3 != nil {
-		fmt.Println(err3)
-	}
-
-	defer f.Close()
-
-	bc = append(bc, byte('\n'))
-
-	fi, _ := f.Stat()
-	_, err4 := f.WriteAt(bc, fi.Size()-2)
-}*/
+//No backup function needed since pastewrite() updates both the npastes object and both the file so no need for file backup, cause memory loss will not cause anything
 
 func pasteread(id int) pastefmt { //no need for this cause we save to npastes []pastefmt
 	return npastes[id]
