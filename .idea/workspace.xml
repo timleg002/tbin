@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cd1e8af-f7b3-428e-ac60-48f85bf56f92" name="Default Changelist" comment="" />
+    <list default="true" id="5cd1e8af-f7b3-428e-ac60-48f85bf56f92" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pastes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/submit_paste.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tbin.go" beforeDir="false" afterPath="$PROJECT_DIR$/tbin.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,7 +21,11 @@
     </option>
   </component>
   <component name="GOROOT" path="C:/Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1k1J2veFhnA6lSL7njocEmFhfDe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -42,7 +51,6 @@
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/tbin.go" />
       <directory value="$PROJECT_DIR$/../tbin.go" />
-      <output_directory value="$PROJECT_DIR$/out" />
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -56,33 +64,53 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="355" width="1092" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604863630361">
+    <state x="872" y="341" key="#Plugins" timestamp="1604963725974">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="734" y="355" width="1092" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1604863630361" />
-    <state x="1009" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604863639207">
+    <state x="872" y="341" key="#Plugins/0.0.2560.1400@0.0.2560.1400" timestamp="1604963725974" />
+    <state x="734" y="355" width="1092" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604964632646">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1009" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1604863639207" />
+    <state x="734" y="355" width="1092" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1604964632646" />
+    <state x="1009" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604963146539">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1009" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1604963146539" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1604862021545">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1604862021545" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1604956642911">
+    <state x="1158" y="598" key="Github.ShareDialog" timestamp="1604962886246">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1604956642911" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1604956642911">
+    <state x="1158" y="598" key="Github.ShareDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1604962886246" />
+    <state x="1147" y="405" width="702" height="590" key="Github.UntrackedFilesDialog" timestamp="1604962916864">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1604956642911" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1604956642911">
+    <state x="1147" y="405" width="702" height="590" key="Github.UntrackedFilesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1604962916864" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1604965967358">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1604956642911" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1604956642911">
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1604965967358" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1604965967358">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1604956642911" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1604965967358" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1604965967358">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1604965967358" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1604965967358">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1604965967358" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1604963675717">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1604963675717" />
+    <state x="1002" y="612" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604962826799">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1002" y="612" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1604962826799" />
   </component>
 </project>
