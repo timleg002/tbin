@@ -10,8 +10,6 @@ import (
 	"os"
 )
 
-
-
 //Constants
 const (
 	LISTEN_ADDR_INIT   = "/init"
@@ -58,15 +56,23 @@ func submitpastehandler(w http.ResponseWriter, req *http.Request) { //POST
 	pastewrite_id_impl(pastefmt{
 		req.PostForm.Get("text"),
 		req.PostForm.Get("author"),
-		"",
+		linkgen(),
 	})
 }
 
-func linkgen() string {
-	for i := 0; i < 16; i++ {
-		num, _ := rand.Int(rand.Reader, big.NewInt(16))
-		num2, _ :=
+func linkgen() string { //maybe some checking if the value already eixsts?🤔
+	ret := make([]byte, 8) //should be 8 bytes == 8 chars in 1 word
+	for i := 0; i < 8; i++ {
+		ret[i] = randbyte()
 	}
+	return string(ret)
+}
+
+var acceptablechars = []byte{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'}
+
+func randbyte() byte {
+	num, _ := rand.Int(rand.Reader, big.NewInt(int64(len(acceptablechars))))
+	return acceptablechars[num.Int64()]
 }
 
 func errhandle(e error, errordesc string) {
@@ -81,12 +87,12 @@ type pastefmt struct { //no id cause count of array is the ID
 	Link   string `json:"link"`
 }
 
-func pasteinit(){
+func pasteinit() {
 	bytecontent, err := ioutil.ReadFile("pastes.json")
 	if err != nil {
 		fmt.Println(err)
 	}
-	err2 := json.Unmarshal(bytecontent, &npastes)//load content into &npastes
+	err2 := json.Unmarshal(bytecontent, &npastes) //load content into &npastes
 	if err2 != nil {
 		fmt.Println(err2)
 	}
@@ -111,12 +117,12 @@ func pasteinit(){
 	_, err4 := f.WriteAt(bc, fi.Size()-2)
 }*/
 
-func pasteread(id int) pastefmt{//no need for this cause we save to npastes []pastefmt
+func pasteread(id int) pastefmt { //no need for this cause we save to npastes []pastefmt
 	return npastes[id]
 }
 
-func pastewrite(id int, paste pastefmt) {//this just appends the paste to the file
-	bc, err2 := json.Marshal(paste)
+func pastewrite(id int, paste pastefmt) { //this just appends the paste to the file
+	bc, err2 := json.Marshal(&paste) //&pastefmt or pastefmt !!!!!!!
 	if err2 != nil {
 		fmt.Println(err2)
 	}
@@ -136,9 +142,9 @@ func pastewrite(id int, paste pastefmt) {//this just appends the paste to the fi
 		fmt.Println(err4)
 	}
 
-	npastes = append(npastes, paste)//to include (match!) in backup
+	npastes = append(npastes, paste) //to include (match!) in backup
 }
 
-func pastewrite_id_impl(paste pastefmt){
-	pastewrite(len(npastes)+1, paste)//should work idk
+func pastewrite_id_impl(paste pastefmt) {
+	pastewrite(len(npastes)+1, paste) //should work idk
 }
