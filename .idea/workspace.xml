@@ -19,10 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cd1e8af-f7b3-428e-ac60-48f85bf56f92" name="Default Changelist" comment="write is fully working, linkgen is fully working too...finally some commit that is working lmaooo">
+    <list default="true" id="5cd1e8af-f7b3-428e-ac60-48f85bf56f92" name="Default Changelist" comment="read and write is fully working, onto beautiful-er code formatting now.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pastes.json" beforeDir="false" afterPath="$PROJECT_DIR$/pastes.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tbin.go" beforeDir="false" afterPath="$PROJECT_DIR$/tbin.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tbin2.go" beforeDir="false" afterPath="$PROJECT_DIR$/tbin2.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +54,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -97,9 +99,18 @@
     <MESSAGE value="so i wont save work lmao" />
     <MESSAGE value="untested!!" />
     <MESSAGE value="write is fully working, linkgen is fully working too...finally some commit that is working lmaooo" />
-    <option name="LAST_COMMIT_MESSAGE" value="write is fully working, linkgen is fully working too...finally some commit that is working lmaooo" />
+    <MESSAGE value="read and write is fully working, onto beautiful-er code formatting now." />
+    <option name="LAST_COMMIT_MESSAGE" value="read and write is fully working, onto beautiful-er code formatting now." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1072" y="533" key="#Go_Modules" timestamp="1605644877197">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1072" y="533" key="#Go_Modules/0.0.2560.1400@0.0.2560.1400" timestamp="1605644877197" />
+    <state x="872" y="358" width="816" height="729" key="#Intentions" timestamp="1605644143054">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="358" width="816" height="729" key="#Intentions/0.0.2560.1400@0.0.2560.1400" timestamp="1605644143054" />
     <state x="872" y="341" key="#Plugins" timestamp="1604963725974">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -140,10 +151,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1605038889552" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1605011065576">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1605038950511">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605011065576" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605038950511" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1605010216120">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
